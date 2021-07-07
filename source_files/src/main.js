@@ -3,9 +3,20 @@ import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify'
 import Vuex from 'vuex'
+import VueMeta from 'vue-meta'
+
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
+
+Vue.use(VueMeta, {
+  keyName: 'metaInfo',
+  attribute: 'data-vue-meta',
+  ssrAttribute: 'data-vue-meta-server-rendered',
+  tagIDKeyName: 'vmid',
+  refreshOnceOnNavigation: true
+})
+
 
 const store = new Vuex.Store({
   state: {
@@ -91,6 +102,7 @@ const store = new Vuex.Store({
 new Vue({
   router,
   vuetify,
+  VueMeta,
   store: store,
   render: h => h(App)
 }).$mount('#app')
