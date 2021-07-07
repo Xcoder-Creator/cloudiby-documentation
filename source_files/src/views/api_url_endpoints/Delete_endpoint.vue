@@ -116,7 +116,7 @@
                     </p>
                     <p id="doc_intro">Below is a complete example on how to use the delete file API endpoint:</p>
                     <div>
-                        <iframe width="100%" height="300" src="//jsfiddle.net/Michael220/k8cm1p7u/55/embedded/js,html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+                        <iframe width="100%" height="300" src="//jsfiddle.net/Michael220/k8cm1p7u/37/embedded/js,html/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
                     </div>
                     <v-alert
                         border="left"
@@ -388,6 +388,21 @@
 
 <script>
 export default {
+      metaInfo() {
+        return {
+            title: "Delete File | Cloudiby Developer Documentation",
+            meta: [
+                { name: 'description', content:  'Cloudiby is an online storage service which allows you store files and documents for free on the cloud.'},
+                { property: 'og:title', content: "Delete File | Cloudiby Developer Documentation"},
+                { property: 'og:site_name', content: 'Cloudiby'},
+                {property: 'og:type', content: 'website'},
+                {name: 'robots', content: 'index,follow'}
+            ]
+        }
+    },
+
+
+
     data(){
         return {
             nav_items: this.$store.state.delete_endpoint_page,
@@ -413,14 +428,7 @@ export default {
                 v => !!v || 'E-mail is required',
                 v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
             ],
-            links: [
-                'Home',
-                'About Us',
-                'Cloudiby Team',
-                'Services',
-                'Join Cloudiby',
-                'Contact Us',
-            ],
+            links: [],
             drawer: null,
             fab: false,
             auto_comp_loading: false,
